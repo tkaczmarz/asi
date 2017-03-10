@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# asi
+
+Architektura serwisów internetowych - Projekt
+>>>>>>> f3f940b42951160c6d9041f3872b89bf0de37f80
