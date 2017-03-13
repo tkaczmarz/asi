@@ -2,13 +2,6 @@
 
 <h1>Users</h1>
 
-<!-- login/logout -->
-<% if logged_in? %>
-  <%= link_to 'Logout', logout_path, method: :delete %>
-<% else %>
-  <%= link_to 'Login', login_path %>
-<% end %>
-
 <table>
   <thead>
     <tr>
