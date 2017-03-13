@@ -22,4 +22,4 @@
 Aplikacja pozwala na przeglądanie samochodów w bazie danych. Zarejestrowany użytkownik może także dodawać samochody.
 </p>
 
-[Wdrożona aplikacja](shielded-tundra-94334.herokuapp.com)
+[Wdrożona aplikacja](https://shielded-tundra-94334.herokuapp.com/)
