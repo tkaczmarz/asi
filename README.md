@@ -1,30 +1,23 @@
-<<<<<<< HEAD
-# README
+<h1>Tomasz Kaczmarz - Architektura Serwisów Internetowych</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<table>
+  <tr>
+    <th>Wersja Ruby</th>
+    <th>Wersja Rails</th>
+    <th>Baza danych</th>
+    <th>Framework</th>
+    <th>Dodatkowe gemy</th>
+  </tr>
+  <tr>
+    <td>2.4.0</td>
+    <td>5.0.2</td>
+    <td>Lokalnie SQLite, Heroku - PostgreSQL</td>
+    <td>Bootstrap</td>
+    <td>bcrypt</td>
+  </tr>
+</table>
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
-# asi
-
-Architektura serwisów internetowych - Projekt
->>>>>>> f3f940b42951160c6d9041f3872b89bf0de37f80
+<h2>Salon samochodowy</h2>
+<p>
+Aplikacja pozwala na przeglądanie samochodów w bazie danych. Zarejestrowany użytkownik może także dodawać samochody.
+</p>
