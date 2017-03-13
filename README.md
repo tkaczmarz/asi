@@ -13,7 +13,7 @@
     <td>5.0.2</td>
     <td>Lokalnie SQLite, Heroku - PostgreSQL</td>
     <td>Bootstrap</td>
-    <td>bcrypt</td>
+    <td>bcrypt, will_paginate</td>
   </tr>
 </table>
 
@@ -21,3 +21,5 @@
 <p>
 Aplikacja pozwala na przeglądanie samochodów w bazie danych. Zarejestrowany użytkownik może także dodawać samochody.
 </p>
+
+[Wdrożona aplikacja](shielded-tundra-94334.herokuapp.com)
