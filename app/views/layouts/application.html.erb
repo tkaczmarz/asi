@@ -17,12 +17,14 @@
         <%= link_to "Salon samochodowy", home_path, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Przeglądaj samochody", cars_path %></li>
             <li><%= link_to "Strona główna",   home_path %></li>
 
             <% if logged_in? %>
-			  <li><%= link_to 'Wyloguj się', logout_path, method: :delete %></li>
+			  <li><%= link_to 'Wyloguj się' + ' ' + current_user.email, logout_path, method: :delete %></li>
 			<% else %>
 			  <li><%= link_to 'Zaloguj się', login_path %></li>
+			  <li><%= link_to "Zarejestruj się",   signup_path %></li>
 			<% end %>
           </ul>
         </nav>

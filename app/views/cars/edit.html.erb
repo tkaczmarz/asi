@@ -1,0 +1,7 @@
+<h1>Edytuj samochód</h1>
+<% provide(:title, 'Edycja samochodu') %>
+
+<%= render 'form', car: @car %>
+
+<%= link_to 'Pokaż', @car %> |
+<%= link_to 'Wróć', cars_path %>

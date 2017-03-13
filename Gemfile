@@ -9,6 +9,7 @@ end
 gem 'rails', '~> 5.0.2'
 gem 'bcrypt', '3.1.11'
 gem 'bootstrap-sass', '3.3.6'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'

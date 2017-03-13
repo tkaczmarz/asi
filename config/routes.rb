@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cars
+  get 'cars/new'
   get 'static_pages/home'
   get 'sessions/new'
   root 'static_pages#home'

@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% provide(:title, @user.email) %>
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
@@ -10,5 +10,5 @@
   <%= @user.password_digest %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edytuj', edit_user_path(@user) %> |
+<%= link_to 'Wróć', users_path %>
