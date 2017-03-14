@@ -3,23 +3,23 @@
 
 <h1>Samochody</h1>
 
-<%= link_to "Dodaj samochód", new_car_path, class: "btn btn-lg btn-primary" %>
-
-<table>
-  <tbody>
-    <% @cars.each do |car| %>
-      <tr>
-        <td><img src=<%= car.image %> alt="car-image" width="256" height="192" /></td>
-        <td><%= link_to car.make + ' ' + car.model, car %></td>
-        <td><%= link_to 'Edytuj', edit_car_path(car) %></td>
-        <td><%= link_to 'Usuń', car, method: :delete, data: { confirm: 'Na pewno?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul class="cars-list">
+  <% @cars.each do |car| %>
+    <li class="car-element">
+      <img src=<%= car.image %> width="256" height="192" />
+      <div>
+        <%= link_to car.make + ' ' + car.model, car, class: "lead" %>
+      </div>
+      <%= link_to 'Edytuj', edit_car_path(car) %>
+      <%= link_to 'Usuń', car, method: :delete, data: { confirm: 'Na pewno?' } %>
+    </li>
+  <% end %>
+</ul>
 
 <br>
 
-<%= link_to "Dodaj samochód", new_car_path, class: "btn btn-lg btn-primary" %>
-
-<%= will_paginate @messages %>
+<div id="footer">
+  <%= link_to "Dodaj samochód", new_car_path, class: "btn btn-lg btn-default" %>
+  <br>
+  <%= will_paginate @cars %>
+</div>

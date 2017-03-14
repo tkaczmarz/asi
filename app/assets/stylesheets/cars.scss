@@ -1,3 +1,24 @@
-// Place all the styles related to the Cars controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ul.cars-list {
+	list-style-type: none;
+	list-style-position: inside;
+}
+
+li.car-element {
+	float: left;
+	border-radius: 8px;
+	background: #ccc;
+	margin: 10px;
+	text-align: center;
+}
+
+img {
+	margin: 10px;
+}
+
+.lead {
+	text-align: center;
+}
+
+#footer {
+	float: right;
+}
