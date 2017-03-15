@@ -13,7 +13,7 @@
     <td>5.0.2</td>
     <td>Lokalnie SQLite, Heroku - PostgreSQL</td>
     <td>Bootstrap</td>
-    <td>bcrypt, will_paginate</td>
+    <td>bcrypt, mini_magick</td>
   </tr>
 </table>
 
@@ -23,3 +23,13 @@ Aplikacja pozwala na przeglądanie samochodów w bazie danych. Zarejestrowany u�
 </p>
 
 [Wdrożona aplikacja](https://shielded-tundra-94334.herokuapp.com/)
+
+<h2>Opis dodatkowych gemów</h2>
+<ul>
+<li>
+  <strong>bcrypt</strong>: Szyfrowanie haseł użytkowników
+</li>
+<li>
+  <strong>mini_magick</strong>: Skalowanie obrazków
+</li>
+</ul>
