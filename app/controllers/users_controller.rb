@@ -19,9 +19,6 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    if !logged_in? || current_user.email != 'admin@mail.com'
-      redirect_to users_path
-    end
   end
 
   # POST /users
@@ -54,14 +51,13 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    if !logged_in? || current_user.email != 'admin@mail.com'
+    if !logged_in?
       redirect_to users_path
     else
-      @user.destroy
-      respond_to do |format|
-        format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-        format.json { head :no_content }
-      end
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
