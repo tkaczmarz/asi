@@ -6,7 +6,7 @@
 <ul class="cars-list">
   <% @cars.each do |car| %>
     <li class="car-element">
-      <img src=<%= car.image %> width="256" height="192" />
+      <%= link_to image_tag(car.image, size: "256x192"), car %>
       <div>
         <%= link_to car.make + ' ' + car.model, car, class: "lead" %>
       </div>
