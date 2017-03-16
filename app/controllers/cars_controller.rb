@@ -17,7 +17,7 @@ class CarsController < ApplicationController
     if logged_in?
       @car = Car.new
     else
-      redirect_to cars_path
+      redirect_to login_path
     end
   end
 
