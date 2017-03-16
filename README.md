@@ -39,7 +39,7 @@ Stworzyłem model użytkownika z polem o nazwie 'password_digest'. Po wygenerowa
 </li>
 </ul>
 
-<h3>Kolejne gemy które próbowałem wykorzystać</h3>
+<h3>Kolejne gemy, które próbowałem wykorzystać</h3>
 <ul>
   <li>mini_magick</li>
   <li>fog-google</li>
@@ -48,6 +48,7 @@ Stworzyłem model użytkownika z polem o nazwie 'password_digest'. Po wygenerowa
   <li>carrierwave</li>
 </ul>
 
-Miały one służyć do pobierania zdjęć samochodów z dysku klienta, edycji tych zdjęć oraz wrzucania ich na Google Cloud Platform Storage. Następnie stamtąd miały być pobierane przy pomocy linku zapisanego w bazie danych.
+Miały one służyć do pobierania zdjęć samochodów z dysku klienta, edycji tych zdjęć oraz wrzucania ich na Google Cloud Platform Storage. Następnie stamtąd miały być pobierane przy pomocy linku zapisanego w bazie danych.<br>
+Próby implementacji tych rozwiązań znajdują się w gałęzi '<i>upload</i>'.
 
-Tworząc ten projekt korzystałem z [samouczka](https://www.railstutorial.org/book/beginning/)
+Tworząc ten projekt korzystałem z [samouczka](https://www.railstutorial.org/book/beginning/).
