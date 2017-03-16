@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    if !logged_in? || current_user.email != 'admin@mail.com'
+    if !logged_in?
       redirect_to users_path
     end
   end
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    if !logged_in? || current_user.email != 'admin@mail.com'
+    if !logged_in?
       redirect_to users_path
     else
       @user.destroy

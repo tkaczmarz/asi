@@ -15,11 +15,7 @@ class CarsController < ApplicationController
   # GET /cars/new
   def new
     if logged_in?
-      if current_user.email == 'admin@mail.com'
-        @car = Car.new
-      else
-        redirect_to cars_path
-      end
+      @car = Car.new
     else
       redirect_to login_path
     end
@@ -27,7 +23,7 @@ class CarsController < ApplicationController
 
   # GET /cars/1/edit
   def edit
-    if !logged_in? || current_user.email != 'admin@mail.com'
+    if !logged_in?
       redirect_to cars_path
     end
   end
@@ -69,7 +65,7 @@ class CarsController < ApplicationController
   # DELETE /cars/1
   # DELETE /cars/1.json
   def destroy
-    if !logged_in? || current_user.email != 'admin@mail.com'
+    if !logged_in?
       redirect_to cars_path
     else
       @car.destroy
