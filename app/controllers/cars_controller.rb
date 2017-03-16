@@ -24,6 +24,7 @@ class CarsController < ApplicationController
   # GET /cars/1/edit
   def edit
     if !logged_in?
+      flash[:danger] = 'Najpierw trzeba się zalogować!'
       redirect_to cars_path
     end
   end
@@ -62,6 +63,7 @@ class CarsController < ApplicationController
   # DELETE /cars/1.json
   def destroy
     if !logged_in?
+      flash[:danger] = 'Najpierw trzeba się zalogować!'
       redirect_to cars_path
     else
       @car.destroy

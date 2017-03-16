@@ -28,8 +28,10 @@ class UsersController < ApplicationController
 
     if @user.save
       log_in @user
+      flash[:success] = 'Witam na stronie!'
       redirect_to '/'
     else
+      flash.now[:danger] = 'Nie udało się utworzyć konta!'
       render 'new'
     end
   end
