@@ -35,8 +35,19 @@ Stworzyłem model użytkownika z polem o nazwie 'password_digest'. Po wygenerowa
       Po utworzeniu użytkownika password_digest automatycznie wypełnia się zaszyfrowanym hasłem.
 </li>
 <li>
-  <strong>bootstrap-sass</strong>: Wygodna edycja widoków
+  <strong>bootstrap-sass</strong>: Wygodna edycja widoków w formacie .scss
 </li>
 </ul>
+
+<h3>Kolejne gemy które próbowałem wykorzystać</h3>
+<ul>
+  <li>mini_magick</li>
+  <li>fog-google</li>
+  <li>google-api-client</li>
+  <li>mime-types</li>
+  <li>carrierwave</li>
+</ul>
+
+Miały one służyć do pobierania zdjęć samochodów z dysku klienta, edycji tych zdjęć oraz wrzucania ich na Google Cloud Platform Storage. Następnie stamtąd miały być pobierane przy pomocy linku zapisanego w bazie danych.
 
 Tworząc ten projekt korzystałem z [samouczka](https://www.railstutorial.org/book/beginning/)
