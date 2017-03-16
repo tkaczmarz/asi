@@ -13,7 +13,7 @@
     <td>5.0.2</td>
     <td>Lokalnie SQLite, Heroku - PostgreSQL</td>
     <td>Bootstrap</td>
-    <td>bcrypt, bootstrap-sass</td>
+    <td>bcrypt, mini_magick</td>
   </tr>
 </table>
 
@@ -27,27 +27,9 @@ Aplikacja pozwala na przeglądanie samochodów w bazie danych. Zarejestrowany u�
 <h2>Opis dodatkowych gemów</h2>
 <ul>
 <li>
-  <strong>bcrypt</strong>: Szyfrowanie haseł użytkowników <br/>
-  Użycie:<br/>
-Stworzyłem model użytkownika z polem o nazwie 'password_digest'. Po wygenerowaniu dopisałem w modelu linijkę <code>has_secure_password</code>. Do modelu zostały automatycznie dodane kolumny 'password' oraz 'password_confirmation', które wykorzystuję w trakcie tworzenia użytkownika. W kontrolerze podałem dopuszczalne parametry użytkownika przesłanego do utworzenia: <br/><code>def user_params <br/>
-      params.require(:user).permit(:email, :password, :password_confirmation) <br/>
-      end</code><br/>
-      Po utworzeniu użytkownika password_digest automatycznie wypełnia się zaszyfrowanym hasłem.
+  <strong>bcrypt</strong>: Szyfrowanie haseł użytkowników
 </li>
 <li>
-  <strong>bootstrap-sass</strong>: Wygodna edycja widoków w formacie .scss
+  <strong>mini_magick</strong>: Skalowanie obrazków
 </li>
 </ul>
-
-<h3>Kolejne gemy które próbowałem wykorzystać</h3>
-<ul>
-  <li>mini_magick</li>
-  <li>fog-google</li>
-  <li>google-api-client</li>
-  <li>mime-types</li>
-  <li>carrierwave</li>
-</ul>
-
-Miały one służyć do pobierania zdjęć samochodów z dysku klienta, edycji tych zdjęć oraz wrzucania ich na Google Cloud Platform Storage. Następnie stamtąd miały być pobierane przy pomocy linku zapisanego w bazie danych.
-
-Tworząc ten projekt korzystałem z [samouczka](https://www.railstutorial.org/book/beginning/)

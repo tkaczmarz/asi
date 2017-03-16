@@ -15,15 +15,19 @@ class CarsController < ApplicationController
   # GET /cars/new
   def new
     if logged_in?
-      @car = Car.new
+      if current_user.email == 'admin@mail.com'
+        @car = Car.new
+      else
+        redirect_to cars_path
+      end
     else
-      redirect_to cars_path
+      redirect_to login_path
     end
   end
 
   # GET /cars/1/edit
   def edit
-    if !logged_in?
+    if !logged_in? || current_user.email != 'admin@mail.com'
       redirect_to cars_path
     end
   end
@@ -33,6 +37,10 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     
+    # upload image file
+    uploader = AvatarUploader.new
+    uploader.store!(params[:image_file])
+
     respond_to do |format|
       if @car.save
         format.html { redirect_to @car, notice: 'Car was successfully created.' }
@@ -61,7 +69,7 @@ class CarsController < ApplicationController
   # DELETE /cars/1
   # DELETE /cars/1.json
   def destroy
-    if !logged_in?
+    if !logged_in? || current_user.email != 'admin@mail.com'
       redirect_to cars_path
     else
       @car.destroy
