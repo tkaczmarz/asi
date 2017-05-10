@@ -15,6 +15,8 @@ gem "fog-google"
 gem "google-api-client", ">= 0.6.2", "< 0.9"
 gem "mime-types"
 gem 'carrierwave', '~> 1.0'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
