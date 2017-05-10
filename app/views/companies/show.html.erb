@@ -4,17 +4,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
   <%= @company.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Szczegóły</strong><br/>
   <%= @company.description %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Gdzie nas znajdziesz</strong><br/>
   <%= @company.address %>
 </p>
 
@@ -36,6 +35,26 @@
 	  handler.fitMapToBounds();
 	});
 </script>
+
+<p>
+	<strong>Samochody</strong>
+	<table>
+		<thead>
+			<tr>
+				<th>Marka</th>
+				<th>Model</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @company.cars.each do |car| %>
+				<tr>
+					<td><%= car.make %></td>
+					<td><%= car.model %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</p>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
