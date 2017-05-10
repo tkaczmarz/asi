@@ -4,12 +4,14 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 9)
+    @cars = Car.all.order("created_at DESC").paginate(:page => params[:page], 
+                                                      :per_page => 9)
   end
 
   # GET /cars/1
   # GET /cars/1.json
   def show
+
   end
 
   # GET /cars/new
@@ -82,6 +84,6 @@ class CarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
-      params.require(:car).permit(:make, :model, :image)
+      params.require(:car).permit(:make, :model, :image, :company_id)
     end
 end
