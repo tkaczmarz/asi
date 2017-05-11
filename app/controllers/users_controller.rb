@@ -21,18 +21,32 @@ class UsersController < ApplicationController
   def edit
   end
 
+  # GET /company
+  def company_data
+    @company = current_user.company
+  end
+
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
+    company = Company.new
+    company.name = '---'
 
-    if @user.save
-      log_in @user
-      flash[:success] = 'Witam na stronie!'
-      redirect_to '/'
+    if company.save
+      @user.company = company
+      if @user.save
+        log_in @user
+        flash[:success] = 'Witam na stronie!'
+        redirect_to '/'
+      else
+        flash.now[:danger] = 'Nie udało się utworzyć konta!'
+        company.destroy
+        render 'new'
+      end
     else
-      flash.now[:danger] = 'Nie udało się utworzyć konta!'
-      render 'new'
+      flash.now[:danger] = 'Wystąpił błąd w trakcie zapisywania!'
+        render 'new'
     end
   end
 
@@ -72,6 +86,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation, :company_id)
     end
 end

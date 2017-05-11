@@ -4,11 +4,13 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = Company.where("address IS NOT NULL")
     @hash = Gmaps4rails.build_markers(@companies) do |company, marker|
-      marker.lat company.latitude
-      marker.lng company.longitude
-      marker.infowindow (company.name + " - " + company.address)
+      if company.address != nil
+        marker.lat company.latitude
+        marker.lng company.longitude
+        marker.infowindow (company.name + " - " + company.address)
+      end
     end
   end
 
@@ -47,7 +49,8 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update(company_params)
-        format.html { redirect_to @company, notice: 'Company was successfully updated.' }
+        flash[:success] = 'Dane firmy zostały zaktualizowane'
+        format.html { redirect_to '/company' }
         format.json { render :show, status: :ok, location: @company }
       else
         format.html { render :edit }
@@ -74,6 +77,6 @@ class CompaniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:name, :description, :address, :latitude, :longitude)
+      params.require(:company).permit(:name, :description, :address)
     end
 end

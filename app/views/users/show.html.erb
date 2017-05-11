@@ -10,5 +10,12 @@
   <%= @user.password_digest %>
 </p>
 
+<p>
+	<% if @user.company.name != nil %>
+	  <strong>company:</strong>
+	  <%= @user.company.name %>
+	<% end %>
+</p>
+
 <%= link_to 'Edytuj', edit_user_path(@user) %> |
 <%= link_to 'Wróć', users_path %>

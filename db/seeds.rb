@@ -1,10 +1,10 @@
 users_list = [
-	[ "admin@mail.com", "admin1423", "admin1423" ],
-	[ "asdf@asdf.com", "asdfasdf", "asdfasdf" ]
+	[ "admin@mail.com", "admin1423", "admin1423", 1 ],
+	[ "asdf@asdf.com", "asdfasdf", "asdfasdf", 2 ]
 ]
 
-users_list.each do |email, password, confirmation|
-	User.create(email: email, password: password, password_confirmation: confirmation)
+users_list.each do |email, password, confirmation, company_id|
+	User.create(email: email, password: password, password_confirmation: confirmation, company_id: company_id)
 end
 
 companies_list = [

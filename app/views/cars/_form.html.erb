@@ -26,6 +26,8 @@
     <%= f.text_field :image %>
   </div>
 
+  <%= f.hidden_field :company_id, value: current_user.company_id.to_s %>
+
   <div class="actions">
     <%= f.submit "Zatwierdź" %>
   </div>
