@@ -4,11 +4,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <%= @company.name %>
+  <h1><strong><%= @company.name %></strong></h1>
 </p>
 
 <p>
-  <strong>Szczegóły</strong><br/>
+  <strong>O nas</strong><br/>
   <%= @company.description %>
 </p>
 
@@ -17,9 +17,7 @@
   <%= @company.address %>
 </p>
 
-<div style='width: 600px;'>
-  <div id="map" style='width: 600px; height: 500px;'></div>
-</div>
+<div id="map" style='width: 600px; height: 500px;'></div>
 
 <script type="text/javascript">
 	handler = Gmaps.build('Google');
@@ -37,23 +35,16 @@
 </script>
 
 <p>
-	<strong>Samochody</strong>
-	<table>
-		<thead>
-			<tr>
-				<th>Marka</th>
-				<th>Model</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @company.cars.each do |car| %>
-				<tr>
-					<td><%= car.make %></td>
-					<td><%= car.model %></td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
+	<% if @company.cars.length > 0 %>
+		<strong>Samochody dostępne w naszej ofercie:</strong>
+	<% end %>
+	<ul>
+		<% @company.cars.each do |car| %>
+			<li><a href="/cars/<%= car.id %>">
+				<%= car.make + " " + car.model %>
+			</a></li>
+		<% end %>
+	</ul>
 </p>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |

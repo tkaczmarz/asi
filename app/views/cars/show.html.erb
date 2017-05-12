@@ -1,3 +1,6 @@
+<script src="//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+
 <p id="notice"><%= notice %></p>
 <% provide(:title, @car.model) %>
 
@@ -7,8 +10,27 @@
 
 <p>
   <%= @car.make %>
-  <%= @car.model %>
-  <br/>Do kupienia w <%= @car.company.name %>
+  <%= @car.model %><br/>
+  Do kupienia w <%= link_to @car.company.name, '/companies/' + @car.company.id.to_s %><br/>
+  <strong>Adres:</strong>
+  <%= @car.company.address %><br/>
+
+  <div id="map" style='width: 600px; height: 500px; left: 10%;'></div>
+
+	<script type="text/javascript">
+		handler = Gmaps.build('Google');
+		handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+		  markers = handler.addMarkers([
+		    {
+		      "lat": <%= @car.company.latitude %>,
+		      "lng": <%= @car.company.longitude %>,
+		      "infowindow": "<%= @car.company.name + " - " + @car.company.address %>"
+		    }
+		  ]);
+		  handler.bounds.extendWith(markers);
+		  handler.fitMapToBounds();
+		});
+	</script>
 </p>
 
 <%= link_to 'Edytuj', edit_car_path(@car) %> |

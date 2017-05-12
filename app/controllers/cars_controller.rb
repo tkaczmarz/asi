@@ -16,7 +16,12 @@ class CarsController < ApplicationController
   # GET /cars/new
   def new
     if logged_in?
-      @car = Car.new
+      if current_user.company.name != '<brak>'
+        @car = Car.new
+      else
+        flash[:danger] = 'Przed dodaniem samochodu trzeba uzupełnić dane firmy!'
+        redirect_to '/company'
+      end
     else
       redirect_to login_path
     end

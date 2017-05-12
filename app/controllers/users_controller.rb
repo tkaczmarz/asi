@@ -31,7 +31,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     company = Company.new
-    company.name = '---'
+    company.name = '<brak>'
+    company.description = '<brak>'
+    company.address = '<brak>'
 
     if company.save
       @user.company = company

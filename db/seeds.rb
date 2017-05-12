@@ -1,6 +1,7 @@
 users_list = [
 	[ "admin@mail.com", "admin1423", "admin1423", 1 ],
-	[ "asdf@asdf.com", "asdfasdf", "asdfasdf", 2 ]
+	[ "asdf@asdf.com", "asdfasdf", "asdfasdf", 2 ],
+	[ "bmw@mail.com", "asdfasdf", "asdfasdf", 3 ]
 ]
 
 users_list.each do |email, password, confirmation, company_id|
@@ -9,8 +10,8 @@ end
 
 companies_list = [
 	[ "NewCars", "Sprzedajemy nowe samochody.", "Gdańsk, ul. Grunwaldzka 421" ],
-	[ "LikeNew Cars", "Zajmujemy się sprzedażą samochodów używanych.", "Sopot, aleja Niepodległości 832" ],
-	[ "BMW Kraków", "Sprzedajemy nowe i używane samochody marki BMW.", "Kraków" ]
+	[ "LikeNew Cars", "Zajmujemy się sprzedażą samochodów używanych.", "Warszawa, ul. Wiejska 15" ],
+	[ "BMW Kraków", "Sprzedajemy nowe i używane samochody marki BMW.", "Kraków, ul. Nowosądecka 21" ]
 ]
 
 companies_list.each do |name, description, address|
