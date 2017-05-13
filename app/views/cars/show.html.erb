@@ -2,15 +2,16 @@
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
 
 <p id="notice"><%= notice %></p>
-<% provide(:title, @car.model) %>
+<% provide(:title, @car.make + " " + @car.model) %>
+
+<h2><%= @car.make %>
+  <%= @car.model %></h2>
 
 <p>
   <img src=<%= @car.image %> alt="car-image" width="640" height="480" />
 </p>
 
 <p>
-  <%= @car.make %>
-  <%= @car.model %><br/>
   Do kupienia w <%= link_to @car.company.name, '/companies/' + @car.company.id.to_s %><br/>
   <strong>Adres:</strong>
   <%= @car.company.address %><br/>

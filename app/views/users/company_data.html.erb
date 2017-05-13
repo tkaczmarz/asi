@@ -1,21 +1,23 @@
 <%= form_for(@company) do |f| %>
 
+  <h1>Dane firmy</h1>
+
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :Nazwa_firmy %>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
+    <%= f.label :Opis %>
     <%= f.text_field :description %>
   </div>
 
   <div class="field">
-    <%= f.label :address %>
+    <%= f.label :Adres %>
     <%= f.text_field :address %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Zapisz dane' %>
   </div>
 <% end %>

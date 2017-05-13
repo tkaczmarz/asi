@@ -32,6 +32,11 @@ class CarsController < ApplicationController
     if !logged_in?
       flash[:danger] = 'Najpierw trzeba się zalogować!'
       redirect_to cars_path
+    else
+      if @car.company != current_user.company
+        flash[:danger] = 'Samochód nie należy do twojej firmy!'
+        redirect_to cars_path
+      end
     end
   end
 
@@ -42,7 +47,7 @@ class CarsController < ApplicationController
     
     respond_to do |format|
       if @car.save
-        format.html { redirect_to @car, notice: 'Car was successfully created.' }
+        format.html { redirect_to @car, notice: 'Samochód został utworzony.' }
         format.json { render :show, status: :created, location: @car }
       else
         format.html { render :new }
@@ -56,7 +61,7 @@ class CarsController < ApplicationController
   def update
     respond_to do |format|
       if @car.update(car_params)
-        format.html { redirect_to @car, notice: 'Car was successfully updated.' }
+        format.html { redirect_to @car, notice: 'Dane samochodu zostały zaktualizowane.' }
         format.json { render :show, status: :ok, location: @car }
       else
         format.html { render :edit }
@@ -72,10 +77,15 @@ class CarsController < ApplicationController
       flash[:danger] = 'Najpierw trzeba się zalogować!'
       redirect_to cars_path
     else
-      @car.destroy
-      respond_to do |format|
-        format.html { redirect_to cars_url, notice: 'Car was successfully destroyed.' }
-        format.json { head :no_content }
+      if @car.company == current_user.company
+        @car.destroy
+        respond_to do |format|
+          format.html { redirect_to cars_url, notice: 'Samochód został usunięty.' }
+          format.json { head :no_content }
+        end
+      else
+        flash[:danger] = 'Samochód nie należy do twojej firmy!'
+        redirect_to cars_path
       end
     end
   end
