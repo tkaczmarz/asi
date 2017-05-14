@@ -1,13 +1,3 @@
-users_list = [
-	[ "admin@mail.com", "admin1423", "admin1423", 1 ],
-	[ "asdf@asdf.com", "asdfasdf", "asdfasdf", 2 ],
-	[ "bmw@mail.com", "asdfasdf", "asdfasdf", 3 ]
-]
-
-users_list.each do |email, password, confirmation, company_id|
-	User.create(email: email, password: password, password_confirmation: confirmation, company_id: company_id)
-end
-
 companies_list = [
 	[ "NewCars", "Sprzedajemy nowe samochody.", "Gdańsk, ul. Grunwaldzka 421" ],
 	[ "LikeNew Cars", "Zajmujemy się sprzedażą samochodów używanych.", "Warszawa, ul. Wiejska 15" ],
@@ -16,6 +6,16 @@ companies_list = [
 
 companies_list.each do |name, description, address|
 	Company.create(name: name, description: description, address: address)
+end
+
+users_list = [
+	[ "admin@mail.com", "admin1423", "admin1423", 1 ],
+	[ "asdf@asdf.com", "asdfasdf", "asdfasdf", 2 ],
+	[ "bmw@mail.com", "asdfasdf", "asdfasdf", 3 ]
+]
+
+users_list.each do |email, password, confirmation, company_id|
+	User.create(email: email, password: password, password_confirmation: confirmation, company_id: company_id)
 end
 
 cars_list = [
