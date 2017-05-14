@@ -13,7 +13,7 @@
     <td>5.0.2</td>
     <td>Lokalnie SQLite, Heroku - PostgreSQL</td>
     <td>Bootstrap</td>
-    <td>bcrypt, bootstrap-sass</td>
+    <td>bcrypt, bootstrap-sass, geocoder, gmaps4rails</td>
   </tr>
 </table>
 
@@ -37,6 +37,9 @@ Stworzyłem model użytkownika z polem o nazwie 'password_digest'. Po wygenerowa
 <li>
   <strong>bootstrap-sass</strong>: Wygodna edycja widoków w formacie .scss
 </li>
+<li>
+  <strong>geocoder, gmaps4rails</strong>: Mapy Google z lokalizacją zapisaną w bazie danych. Każdy znacznik na mapie zawiera link do danych firmy.
+</li>
 </ul>
 
 <h3>Kolejne gemy, które próbowałem wykorzystać</h3>
@@ -52,3 +55,5 @@ Miały one służyć do pobierania zdjęć samochodów z dysku klienta, edycji t
 Próby implementacji tych rozwiązań znajdują się w gałęzi '<i>upload</i>'.
 
 Tworząc ten projekt korzystałem z [samouczka](https://www.railstutorial.org/book/beginning/).
+
+
