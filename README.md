@@ -38,7 +38,7 @@ Stworzyłem model użytkownika z polem o nazwie 'password_digest'. Po wygenerowa
   <strong>bootstrap-sass</strong>: Wygodna edycja widoków w formacie .scss
 </li>
 <li>
-  <strong>geocoder, gmaps4rails</strong>: Mapy Google z lokalizacją zapisaną w bazie danych. Każdy znacznik na mapie zawiera link do danych firmy.
+  <strong>geocoder, gmaps4rails</strong>: Mapy Google z lokalizacją zapisaną w bazie danych. Każdy znacznik na mapie zawiera link do danych firmy. Obecnie istnieje problem, który sprawia, że czasami mapy nie ładują się lub działają niepoprawnie. Odświeżenie strony naprawia błąd.
 </li>
 </ul>
 
@@ -55,5 +55,3 @@ Miały one służyć do pobierania zdjęć samochodów z dysku klienta, edycji t
 Próby implementacji tych rozwiązań znajdują się w gałęzi '<i>upload</i>'.
 
 Tworząc ten projekt korzystałem z [samouczka](https://www.railstutorial.org/book/beginning/).
-
-
